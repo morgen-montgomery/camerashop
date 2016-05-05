@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <meta charset="utf-8">
+    <title>HP Names Exercise</title>
+    <link rel="stylesheet" ng-href="theme.css">
+  </head>
+  <body ng-init="names=['Harry', 'Ron', 'Hermoine', 'Sirius', 'Hedwig', 'Tonks']">
+    <ul>
+      <li ng-repeat='name in names'>
+        {{name}}
+      </li>
+    </ul>
+    <ul ng-repeat='name in names'>
+      <li>{{name}}</li>
+    </ul>
+    <div ng-init="symbols=['&spades;', '&clubs;', '&hearts;', '&diams;']">
+      <ul>
+        <li ng-repeat='symbol in symbols'>
+          {{symbol}}
+        </li>
+      </ul>
+    </div>
+    <!-- <div ng-repeat="numero in numeros=[1,1,2,2,3,3,4,5,6,7,7,8,9,9] track by $index">
+    </div> -->
+    <div ng-init="nums=[1,1,2,2,3,3,4,5,6,7,7,8,9,9]">
+      <ul>
+        <li ng-repeat="num in nums track by $index">
+          {{num}}
+      </ul>
+    </div>
+    <div ng-show='3 + 4 == 5'>
+      3 + 4 isn't 5, don't show
+    </div>
+
+    <div ng-show='3 + 4 == 7'>
+      3 + 4 is 7, do show
+    </div>
+
+    <div ng-hide='3 + 4 == 5'>
+        3 + 4 isn't 5, don't hide
+    </div>
+
+    <div ng-hide='3 + 4 == 7'>
+      3 + 4 is 7, do hide
+    </div>
+    <form class='password_submission'>
+      <h1>Sign up page:</h1>
+        <input type="text" ng-model='sign_in' ng-init="sign_in = ''">
+        <h3 ng-class="{invalid: sign_in.length <= 5, valid: sign_in.length > 5}">Your password is {{ sign_in.length }} <ng-pluralize count='sign_in.length'
+                                                        when="{'0': 'characters',
+                                                                '1': 'character',
+                                                                'other': 'characters'}">
+                                                  </ng-pluralize>
+        </h3>
+        <div ng-init='Password is invalid' ng-show='sign_in.length <= 5'>
+          Password is invalid
+        </div>
+        <div ng-hide='sign_in.length <= 5'>
+          <button type="button" name="submit">SUBMIT</button>
+        </div>
+    </form>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+  </body>
+</html>

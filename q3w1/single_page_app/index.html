@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ greeting }} World</title>
+  </head>
+  <body>
+    <p>Say something to the world <input type='text' ng-model='greeting' ng-init="greeting='Hello, '"></p>
+    <p>{{ greeting }} world!</p>
+    <p>{{1 + 6}}<p>
+    <br>
+    <input type='text' ng-model='name' placeholder='What is your name?'>
+    <h1>My name is: {{name}}</h1>
+    <input type='text' ng-model='name' placeholder='What is your name?'>
+    <h3> I love {{animal}}</h3>
+      <select ng-model='animal' ng-init="animal= 'BoJack'">
+        <option value='Dogs <3'>Dogs</option>
+        <option value='Cats <3'>Cats</option>
+        <option value='Dogs and Cats <3'>Dogs and Cats</option>
+        <option value='neither'>Neither</option>
+      </select>
+    <p>1 + 2 = {{1 + 2}}</p>
+    <p>My name is {{"BoJack" + " " + "Horseman"}}</p>
+    <p>The array [99,43,22] is {{ [99,43,22].length }} items long.</p>
+    <p>Currency: {{3.14159265359 | currency }}</p>
+    <p>Currency: {{3.14159265359 | currency : "€" }}</p>
+    <input type='text' ng-model='cases'>
+    <p> {{ cases | uppercase}} </p>
+    <p> {{ cases | lowercase}} </p>
+    <div>{{ 3.14159265359 | number:5}}</div>
+    <p>How many digits of pi do you want?
+      <select ng-model='digits' ng-init="digits= '0'">
+        <option value='1'>1</option>
+        <option value='2'>2</option>
+        <option value='3'>3</option>
+        <option value='4'>4</option>
+        <option value='5'>5</option>
+        <option value='6'>6</option>
+        <option value='7'>7</option>
+      </select>
+    </p>
+    <p>Here you go! The first {{ digits }} <ng-pluralize count='digits'
+                    when="{'0': 'digits',
+                        '1': 'digit',
+                        'other': 'digits'}">
+    </ng-pluralize> of pi!</p>
+
+    <p>{{ 3.14159265359 | number: digits }}</p>
+    <p>How much did your meal cost? <input type='number' ng-model='cost'></p>
+    <p>How much do you want to tip?
+      <select ng-model='percent'>
+        <option value='.10'>10%</option>
+        <option value='.15'>15%</option>
+        <option value='.20'>20%</option>
+      </select>
+    </p>
+    <p>Subtotal: {{ cost | currency }}</p>
+    <p>Tip: {{ cost * percent | currency }}</p>
+    <div>{{this}}</div>
+    <h1>Please fill out the following</h1>
+      <h5>Boy's Name</h5>
+      <input type='text' ng-model='boys_name' placeholder="Enter a boy's name...">
+      <h5>Adjective</h5>
+      <input type='text' ng-model='adjective' placeholder="Enter an adjective...">
+      <h5>Plural Noun</h5>
+      <input type='text' ng-model='plural_noun1' placeholder="Enter a plural noun">
+      <h5>Plural Noun</h5>
+      <input type='text' ng-model='plural_noun2' placeholder="Enter a plural noun">
+      <h5>An insect, plural</h5>
+      <input type='text' ng-model='insect' placeholder="Enter an insect, plural">
+      <h5>Plural Noun</h5>
+      <input type='text' ng-model='plural_noun3' placeholder="Enter a plural noun">
+      <h5>A verb ending in "s"</h5>
+      <input type='text' ng-model='verb' placeholder="Enter a verb ending in 's'...">
+    <h1>Mad with the Libs</h1>
+      <h3>I'm in love with {{ boys_name || 'NAMEGOESHERE' }}.  <br>He's so {{ adjective || 'ADJECTIVE' }}!  He has a big flat {{ insect || 'INSECT'}}, <br> and when our {{ plural_noun1 || 'NOUN'}} meet, I get {{ plural_noun3 || 'NOUN'}} in my stomach.<br>I've fallen for him like a ton of {{ plural_noun3 || 'NOUN' }},<br>and he {{ verb || 'VERB' }} me, too.<br>But I think he's got another girlfriend.  What should I do?</h3>
+
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+  </body>
+</html>
